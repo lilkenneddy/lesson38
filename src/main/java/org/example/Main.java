@@ -1,17 +1,25 @@
-package org.example;
+import java.util.Arrays;
+import java.util.List;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+import static org.example.lesson38.MapMerger.mergeMaps;
+import static org.example.lesson38.UniqueElements.getFirstOccurrences;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
-    }
+public static void main(String[] args) {
+    List<Integer> original = Arrays.asList(1, 2, 3, 2, 4, 1, 5);
+    List<Integer> filtered = getFirstOccurrences(original);
+    System.out.println(filtered);
+}
+
+public static void main() {
+    Map<String, Integer> map1 = new HashMap<>();
+    map1.put("apple", 2);
+    map1.put("banana", 3);
+
+    Map<String, Integer> map2 = new HashMap<>();
+    map2.put("banana", 1);
+    map2.put("orange", 4);
+
+    Map<String, Integer> merged = mergeMaps(map1, map2);
+
+    System.out.println(merged); // {apple=2, banana=4, orange=4}
 }
