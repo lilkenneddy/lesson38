@@ -21,5 +21,5 @@ public static void main() {
 
     Map<String, Integer> merged = mergeMaps(map1, map2);
 
-    System.out.println(merged); // {apple=2, banana=4, orange=4}
+    System.out.println(merged);
 }

@@ -13,7 +13,6 @@ public class MapMerger {
             result.put(entry.getKey(), entry.getValue());
         }
 
-        // Додаємо елементи з другої мапи
         for (Map.Entry<String, Integer> entry : map2.entrySet()) {
             result.merge(entry.getKey(), entry.getValue(), Integer::sum);
         }
